@@ -10,3 +10,4 @@ function getVal() {
         body: JSON.stringify({ name: usName.value, age: usAge.value })
     })
 }
+
