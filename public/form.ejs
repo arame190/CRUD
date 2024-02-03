@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+  <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
+
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -15,7 +21,7 @@
             <td>Update</td>
             <td>Delete</td>
         </tr>
-         <% info.forEach(function(justOne) { %>
+        <% obj.forEach(function(justOne) { %>
         <tr>
             <td><%= justOne.name %></td>
             <td><%= justOne.email %></td>
@@ -25,7 +31,7 @@
     <% }); %>
     </table>
 
-    <form action="/updateData" method="post">
+    <form action="/addName" method="post">
         <input id="usName" type="text" required name="name" placeholder="Please type your name"><br><br>
         <input id="usSurname" type="text" required name="surname" placeholder="Please type your surname"><br><br>
         <input id="usAge" type="number" name="age" placeholder="Please type your age"><br><br>
@@ -36,5 +42,55 @@
     </form>
 
     <script src="script.js"></script>
+
+
+
+<!-- partial:index.partial.html -->
+
+<section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+
+    <div class="signin">
+
+     <div class="content">
+
+      <h2>Sign In</h2>
+
+      <div class="form">
+
+       <div class="inputBox">
+
+        <input type="text" required> <i>Username</i>
+
+       </div>
+
+       <div class="inputBox">
+
+        <input type="password" required> <i>Password</i>
+
+       </div>
+
+       <div class="links"> <a href="#">Forgot Password</a> <a href="#">Signup</a>
+
+       </div>
+
+       <div class="inputBox">
+
+        <input type="submit" value="Login">
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </section> <!-- partial -->
+
+
+
 </body>
+
+
+
 </html>
