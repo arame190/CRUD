@@ -3,7 +3,7 @@ var path = require("path");
 const bodyParser = require('body-parser');
 var app = express();
 const { ObjectId } = require('mongoose').Types;
-
+console.log(1)
 const mongoose = require('mongoose');
 const connectionString = 'mongodb+srv://arame_190:aralar666@cluster0.jompnul.mongodb.net/Tumo_product';
 
