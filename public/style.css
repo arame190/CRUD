@@ -1,0 +1,231 @@
+/* Apply some basic styling to the form */
+.formlogin,
+.formsignup {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 8%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style input fields */
+.nameinput,
+.surnameinput,
+.ageinput,
+.numberinput,
+.emailinput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.passwordinput {
+    width: 90%;
+    padding: 10px;
+    margin-right: 15%;
+    margin-bottom: 0.01px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style submit button */
+.Submit,
+.inputBox input[type="submit"],
+.submitinput {
+    background-color: black;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 0.5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.Submit:hover,
+.inputBox input[type="submit"]:hover,
+.submitinput:hover {
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+/* Add some spacing and styling to checkboxes */
+.checkinput {
+    transform: translate(1400%, -220%);
+}
+
+/* Apply styling to hr element */
+hr {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Style the form container */
+.formlogin,
+.formsignup {
+    text-align: center;
+}
+
+#loginform {
+    margin-top: 13%;
+}
+
+/* Add some responsive styling */
+@media only screen and (max-width: 600px) {
+    .formsignup {
+        max-width: 100%;
+    }
+}
+
+/* Style the links container */
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the links */
+.links a {
+    text-decoration: none;
+    color: #3498db;
+    margin: 0 15px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.links a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Apply some spacing between links */
+.links a + a {
+    margin-left: 20px;
+}
+
+.signuph1 {
+    margin-top: -1%;
+
+}
+
+.content {
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+.inputBox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.inputBox i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+.update,
+.delete {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.update:hover,
+.delete:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+    border-top: 6px solid blue;
+    border-right: 6px solid gray;
+    border-bottom: 6px solid gray;
+    border-left: 6px solid gray;
+}
+
+.Email {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.backicon {
+    margin-right: 90%;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.backicon:hover {
+    color: gray;
+}

@@ -1,96 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-
-    <meta charset="UTF-8">
-
-  <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
-
-  <link rel="stylesheet" href="./style.css">
+    <title>Log in / Sign Up</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
     <table>
-        <tr>
-            <td>Name</td>
-            <td>email</td>
-            <td>Update</td>
-            <td>Delete</td>
-        </tr>
         <% obj.forEach(function(justOne) { %>
-        <tr>
-            <td><%= justOne.name %></td>
-            <td><%= justOne.email %></td>
-            <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
-            <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
-        </tr>
-    <% }); %>
+            <tr>
+                <td>
+                    <h1 style="margin: 0;
+                    font-size: 16px;
+                    font-weight: bold;">Name</h1>
+                    <%= justOne.name %>
+                </td>
+                <td>
+                    <h1 style="margin: 0;
+                    font-size: 16px;
+                    font-weight: bold;">Surname</h1>
+                    <%= justOne.surname %>
+                </td>
+                <td>
+                    <h1 style="margin: 0;
+                    font-size: 16px;
+                    font-weight: bold;">Email</h1>
+                    <%= justOne.email %>
+                </td>
+                <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
+                <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
+            </tr>
+            <% }); %>
     </table>
 
-    <form action="/addName" method="post">
-        <input id="usName" type="text" required name="name" placeholder="Please type your name"><br><br>
-        <input id="usSurname" type="text" required name="surname" placeholder="Please type your surname"><br><br>
-        <input id="usAge" type="number" name="age" placeholder="Please type your age"><br><br>
-        <input id="usPassword" type="password" name="password" placeholder="Please type your password"><br><br>
-        <input id="usPhoneNumber" type="phonenumber" name="phonenumber" placeholder="Please type your phonenumber"><br><br>
-        <input id="usEmail" type="email" name="email" placeholder="Please type your email"><br><br>
-        <input type="submit" >
+    <div id="loadingContainer" class="loading-container">
+        <h1 style="margin-left: -40%;">loading...</h1>
+        <div id="loading" class="loading">
+        </div>
+    </div>
+
+    <form id="signupform" class="formsignup" action="/addName" method="post">
+        <h1 class="signuph1">Sign Up Here</h1>
+        <input class="nameinput" id="usName" type="text" required name="name" placeholder="Enter your name">
+        <input class="surnameinput" id="usSurname" type="text" required name="surname" placeholder="Enter your surname">
+        <input class="ageinput" id="usAge" type="date" name="age" onchange="calculateAge()">
+        <input class="passwordinput" id="usPassword" type="password" name="password" placeholder="Enter your password">
+        <input class="checkinput" id="usCheck" type="checkbox">
+        <input class="numberinput" id="usPhoneNumber" type="phonenumber" name="phonenumber"
+            placeholder="Enter your number">
+        <input class="emailinput" id="usEmail" type="email" name="email" placeholder="Enter your email">
+        <input class="submitinput" type="submit" value="Submit">
+        <br><br>
+        <hr>
+        <div class="links">
+            <a onclick="forgetpass()" href="#">Forgot Password</a>
+            <a onclick="login()" href="#">Log In</a>
+        </div>
+    </form>
+
+    <div id="loginform" class="formlogin" style="display: none;" action="/addName" method="post">
+        <h1 class="signuph1" style="text-align: center;">Log In Here</h1>
+        <input class="nameinput" id="usName" type="text" required name="name" placeholder="Name">
+        <input class="passwordinput" id="passwordInput" type="password" name="password" placeholder="Password">
+        <input class="checkinput" id="showPassword" type="checkbox"><br><br>
+        <input class="submitinput" type="submit" value="Submit">
+        <br><br>
+        <hr>
+        <div class="links">
+            <a onclick="forgetpass()" href="#">Forgot Password</a>
+            <a onclick="signup()" href="#">Sign Up</a>
+        </div>
+    </div>
+
+    <form id="forgetpassword" class="formsignup" action="/addName" method="post" 
+    style="display: none;
+           margin-top: 13%;">
+        <div class="backicon" onclick="goBack()"> 
+            <span class="material-icons">
+                arrow_back_ios_new
+            </span>
+        </div>
+        <h1 style="margin-top: -8.5%;" class="signuph1">Forget Password</h1>
+        <p>Enter your email and phone <br> number to reset your password.</p>
+        <br>
+        <input class="Email" type="email" name="email" placeholder="Enter your email" required>
+        <br>
+        <input class="Email" type="phonenumber" name="phone" placeholder="Enter your phone number" required>
+        <br>
+        <hr>
+        <input class="Submit" type="submit" value="Reset Password">
     </form>
 
     <script src="script.js"></script>
 
-
-
-<!-- partial:index.partial.html -->
-
-<section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
-
-    <div class="signin">
-
-     <div class="content">
-
-      <h2>Sign In</h2>
-
-      <div class="form">
-
-       <div class="inputBox">
-
-        <input type="text" required> <i>Username</i>
-
-       </div>
-
-       <div class="inputBox">
-
-        <input type="password" required> <i>Password</i>
-
-       </div>
-
-       <div class="links"> <a href="#">Forgot Password</a> <a href="#">Signup</a>
-
-       </div>
-
-       <div class="inputBox">
-
-        <input type="submit" value="Login">
-
-       </div>
-
-      </div>
-
-     </div>
-
-    </div>
-
-   </section> <!-- partial -->
-
-
-
 </body>
-
-
 
 </html>
